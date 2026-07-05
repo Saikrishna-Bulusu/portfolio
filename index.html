@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saikrishna Bulusu — Research Portfolio</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.dcp-dark{--bg:#0F0F10!important;--surface:#18181B!important;--text:#F8F8F8!important;--sub:#A1A1AA!important;--border:#26262B!important;--navbg:rgba(15,15,16,0.72)!important;--chipbg:#212125!important;--glass:rgba(24,24,27,0.4)!important;--shadow:0 1px 2px rgba(0,0,0,.4)!important;--shadowlift:0 12px 32px rgba(0,0,0,.5)!important}
+@keyframes dcpFadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div class="{{ rootClass }}" ref="{{ rootRef }}" style="--bg:#FAFAFA;--surface:#FFFFFF;--text:#111111;--sub:#666666;--border:#E8E8E8;--accent:#1D4ED8;--navbg:rgba(250,250,250,0.72);--chipbg:#F4F4F5;--glass:rgba(255,255,255,0.4);--shadow:0 1px 2px rgba(0,0,0,.04);--shadowlift:0 12px 32px rgba(17,17,17,.08);background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s">
+
+  <canvas ref="{{ bgCanvas }}" style="position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:0"></canvas>
+
+  <!-- NAV -->
+  <nav style="position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;display:flex;align-items:center;gap:4px;padding:8px 10px;border-radius:16px;border:1px solid var(--border);background:var(--navbg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:var(--shadow);max-width:calc(100vw - 32px);flex-wrap:wrap;justify-content:center">
+    <a href="#home" style="font-size:13px;font-weight:500;color:var(--text);text-decoration:none;padding:7px 12px;border-radius:10px" style-hover="background:var(--chipbg)">Home</a>
+    <a href="#current" style="font-size:13px;font-weight:500;color:var(--sub);text-decoration:none;padding:7px 12px;border-radius:10px" style-hover="background:var(--chipbg);color:var(--text)">Current Research</a>
+    <a href="#experience" style="font-size:13px;font-weight:500;color:var(--sub);text-decoration:none;padding:7px 12px;border-radius:10px" style-hover="background:var(--chipbg);color:var(--text)">Experience</a>
+    <a href="#hobby" style="font-size:13px;font-weight:500;color:var(--sub);text-decoration:none;padding:7px 12px;border-radius:10px" style-hover="background:var(--chipbg);color:var(--text)">Hobby Projects</a>
+    <a href="#vault" style="font-size:13px;font-weight:500;color:var(--sub);text-decoration:none;padding:7px 12px;border-radius:10px" style-hover="background:var(--chipbg);color:var(--text)">Vault</a>
+    <a href="#contact" style="font-size:13px;font-weight:500;color:var(--sub);text-decoration:none;padding:7px 12px;border-radius:10px" style-hover="background:var(--chipbg);color:var(--text)">Contact</a>
+    <button onClick="{{ toggleDark }}" aria-label="Toggle dark mode" style="margin-left:6px;width:40px;height:24px;border-radius:12px;border:1px solid var(--border);background:var(--chipbg);cursor:pointer;position:relative;padding:0">
+      <span style="{{ knobStyle }}"></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" data-screen-label="Hero" style="position:relative;overflow:hidden;padding:150px 24px 90px">
+    <div style="position:relative;max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:center">
+      <div style="animation:dcpFadeUp .5s ease-out both">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--accent);margin-bottom:18px;letter-spacing:.02em">VISITING SCHOLAR · INTELLIGENT DRONE LAB @ UTS · ECE, BITS PILANI</div>
+        <h1 style="font-size:clamp(38px,5vw,58px);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin:0 0 20px">Saikrishna Bulusu</h1>
+        <p style="font-size:19px;line-height:1.55;color:var(--sub);margin:0 0 34px;max-width:46ch;text-wrap:pretty">State estimation optimization pipelines for GPS-denied autonomous aerial environments.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <a href="#current" style="background:var(--accent);color:#fff;font-size:14.5px;font-weight:600;padding:12px 22px;border-radius:14px;text-decoration:none;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-2px);box-shadow:0 8px 20px rgba(29,78,216,.3)">Explore Research</a>
+          <a href="#experience" style="background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--text);border:1px solid var(--border);font-size:14.5px;font-weight:600;padding:12px 22px;border-radius:14px;text-decoration:none;transition:transform .2s" style-hover="transform:translateY(-2px)">Curriculum Vitae</a>
+          <a href="#vault" style="background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--text);border:1px solid var(--border);font-size:14.5px;font-weight:600;padding:12px 22px;border-radius:14px;text-decoration:none;transition:transform .2s" style-hover="transform:translateY(-2px)">Secure Vault</a>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center">
+        <img src="assets/Saikrishna_Bulusu.jpg" alt="Saikrishna Bulusu" style="width:min(340px,100%);aspect-ratio:4/5;object-fit:cover;border-radius:18px;border:1px solid var(--border);box-shadow:var(--shadowlift);filter:grayscale(1);transition:filter .5s ease,transform .3s ease" style-hover="filter:grayscale(0);transform:translateY(-4px)"></img>
+      </div>
+    </div>
+  </header>
+
+  <div style="position:relative;max-width:1120px;margin:0 auto;padding:0 24px 96px;display:flex;flex-direction:column;gap:96px">
+
+    <!-- CURRENT RESEARCH -->
+    <section id="current" data-screen-label="Current Research">
+      <h2 style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin:0 0 8px">Current Research</h2>
+      <p style="color:var(--sub);font-size:15.5px;margin:0 0 32px">Intelligent Drone Lab, UTS — undergraduate thesis under A/Prof. Nabin Sharma.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-4px);box-shadow:var(--shadowlift)">
+          <a href="https://saikrishna-bulusu.github.io/GeoAnchor/" target="_blank" rel="noopener" style="display:block;position:relative;height:240px;overflow:hidden;background:var(--chipbg);text-decoration:none">
+            <iframe src="https://saikrishna-bulusu.github.io/GeoAnchor/" title="GeoAnchor site preview" sandbox="allow-scripts" scrolling="no" tabIndex="-1" style="width:1280px;height:960px;border:none;transform:scale(0.42);transform-origin:0 0;pointer-events:none;background:#fff"></iframe>
+            <div style="position:absolute;inset:0"></div>
+            <div style="position:absolute;bottom:12px;right:12px;background:rgba(17,17,17,.75);color:#fff;font-size:12px;font-weight:600;padding:6px 12px;border-radius:10px;backdrop-filter:blur(6px)">Open live site ↗</div>
+          </a>
+          <div style="padding:26px;display:flex;flex-direction:column;gap:12px;flex:1">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent)">UTS FEIT AI SHOWCASE</div>
+            <h3 style="font-size:18px;font-weight:700;margin:0">GeoAnchor Platform</h3>
+            <p style="font-size:13.5px;line-height:1.6;color:var(--sub);margin:0;flex:1">Vision-aided tracking framework mitigating cumulative state-estimation drift when GPS is jammed or unavailable. Downward-facing optical odometry compared against localized geometric spatial tiles, with real-time confidence re-weighting of sensor inputs.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sub);background:var(--chipbg);border:1px solid var(--border);padding:4px 9px;border-radius:8px">optical odometry</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sub);background:var(--chipbg);border:1px solid var(--border);padding:4px 9px;border-radius:8px">map tiles</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sub);background:var(--chipbg);border:1px solid var(--border);padding:4px 9px;border-radius:8px">confidence re-weighting</span>
+            </div>
+          </div>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:26px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-4px);box-shadow:var(--shadowlift)">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent)">UNDERGRADUATE THESIS · JUN 2025 – PRESENT</div>
+          <h3 style="font-size:18px;font-weight:700;margin:0">Adaptive EKF2 Estimator Re-weighting</h3>
+          <p style="font-size:13.5px;line-height:1.6;color:var(--sub);margin:0;flex:1">Reinforcement-learning models re-weight PX4 EKF2 estimator inputs at runtime, trained and stress-tested inside NVIDIA Isaac Sim environments. Target: failure-tolerant state estimation when individual sensors degrade mid-flight.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sub);background:var(--chipbg);border:1px solid var(--border);padding:4px 9px;border-radius:8px">PX4 EKF2</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sub);background:var(--chipbg);border:1px solid var(--border);padding:4px 9px;border-radius:8px">Reinforcement Learning</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sub);background:var(--chipbg);border:1px solid var(--border);padding:4px 9px;border-radius:8px">NVIDIA Isaac Sim</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" data-screen-label="Research Experience">
+      <h2 style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin:0 0 8px">Research Experience</h2>
+      <p style="color:var(--sub);font-size:15.5px;margin:0 0 32px">Lab positions and contributions, most recent first.</p>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <sc-for list="{{ experience }}" as="x" hint-placeholder-count="0">
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-4px);box-shadow:var(--shadowlift)">
+            <div style="padding:30px;display:flex;flex-direction:column;gap:12px">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent)">{{ x.period }}</div>
+              <h3 style="font-size:19px;font-weight:700;margin:0;letter-spacing:-0.01em">{{ x.lab }}</h3>
+              <div style="font-size:13px;font-weight:600;color:var(--sub)">{{ x.role }} · Supervisor: {{ x.supervisor }}</div>
+              <p style="font-size:13.5px;line-height:1.65;color:var(--sub);margin:0;flex:1">{{ x.desc }}</p>
+              <div style="display:flex;flex-wrap:wrap;gap:8px">
+                <sc-for list="{{ x.tags }}" as="t" hint-placeholder-count="3">
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sub);background:var(--chipbg);border:1px solid var(--border);padding:4px 9px;border-radius:8px">{{ t }}</span>
+                </sc-for>
+              </div>
+              <sc-if value="{{ x.download }}" hint-placeholder-val="{{ false }}">
+                <a href="{{ x.downloadHref }}" download style="display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin-top:4px;background:var(--accent);color:#fff;font-size:13px;font-weight:600;padding:9px 16px;border-radius:14px;text-decoration:none" style-hover="filter:brightness(1.08)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  {{ x.downloadLabel }}
+                </a>
+              </sc-if>
+              <sc-if value="{{ x.quote }}" hint-placeholder-val="{{ false }}">
+                <figure style="margin:8px 0 0;padding:16px 18px;border:1px solid var(--border);border-radius:14px;background:var(--bg)">
+                  <blockquote style="margin:0 0 10px;font-size:13.5px;line-height:1.6;font-weight:500;text-wrap:pretty">&ldquo;{{ x.quote }}&rdquo;</blockquote>
+                  <figcaption style="font-size:12px;color:var(--sub)">{{ x.quoteBy }}</figcaption>
+                </figure>
+              </sc-if>
+            </div>
+            <sc-if value="{{ x.hasMedia }}" hint-placeholder-val="{{ false }}">
+              <div style="background:var(--chipbg);display:flex;flex-direction:column;min-height:260px">
+                <sc-if value="{{ x.mainIsImg }}" hint-placeholder-val="{{ false }}">
+                  <img src="{{ x.mainSrc }}" alt="{{ x.lab }}" onClick="{{ x.mainOpen }}" style="flex:1;min-height:0;width:100%;object-fit:cover;cursor:zoom-in;display:block"></img>
+                </sc-if>
+                <sc-if value="{{ x.mainIsVideo }}" hint-placeholder-val="{{ false }}">
+                  <video src="{{ x.mainSrc }}" muted="{{ true }}" loop="{{ true }}" autoPlay="{{ true }}" playsInline="{{ true }}" onClick="{{ x.mainOpen }}" style="flex:1;min-height:0;width:100%;object-fit:cover;cursor:zoom-in;display:block"></video>
+                </sc-if>
+                <sc-if value="{{ x.hasThumbs }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:flex;gap:6px;padding:8px;background:var(--surface);border-top:1px solid var(--border)">
+                    <sc-for list="{{ x.thumbs }}" as="th" hint-placeholder-count="0">
+                      <sc-if value="{{ th.isImg }}" hint-placeholder-val="{{ false }}">
+                        <img src="{{ th.src }}" alt="thumbnail" onClick="{{ th.open }}" style="width:72px;height:52px;object-fit:cover;border-radius:8px;cursor:zoom-in;border:1px solid var(--border)" style-hover="border-color:var(--accent)"></img>
+                      </sc-if>
+                      <sc-if value="{{ th.isVideo }}" hint-placeholder-val="{{ false }}">
+                        <div onClick="{{ th.open }}" style="position:relative;width:72px;height:52px;border-radius:8px;cursor:zoom-in;border:1px solid var(--border);overflow:hidden;background:#111;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px" style-hover="border-color:var(--accent)">▶</div>
+                      </sc-if>
+                    </sc-for>
+                    <div style="align-self:center;margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--sub);padding-right:6px">click to expand</div>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- HOBBY PROJECTS -->
+    <section id="hobby" data-screen-label="Hobby Projects">
+      <h2 style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin:0 0 8px">Hobby Projects</h2>
+      <p style="color:var(--sub);font-size:15.5px;margin:0 0 32px">Built, broken, and rebuilt outside the lab.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+        <sc-for list="{{ hobby }}" as="p" hint-placeholder-count="0">
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-4px);box-shadow:var(--shadowlift)">
+            <div style="background:var(--chipbg)">
+              <img src="{{ p.mainSrc }}" alt="{{ p.title }}" onClick="{{ p.mainOpen }}" style="{{ p.mainStyle }}"></img>
+              <sc-if value="{{ p.hasThumbs }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;gap:6px;padding:8px;background:var(--surface);border-top:1px solid var(--border)">
+                  <sc-for list="{{ p.thumbs }}" as="th" hint-placeholder-count="0">
+                    <img src="{{ th.src }}" alt="thumbnail" onClick="{{ th.open }}" style="width:72px;height:52px;object-fit:cover;border-radius:8px;cursor:zoom-in;border:1px solid var(--border)" style-hover="border-color:var(--accent)"></img>
+                  </sc-for>
+                  <div style="align-self:center;margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--sub);padding-right:6px">click to expand</div>
+                </div>
+              </sc-if>
+            </div>
+            <div style="padding:26px;display:flex;flex-direction:column;gap:12px;flex:1">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent)">{{ p.venue }}</div>
+              <h3 style="font-size:18px;font-weight:700;margin:0;letter-spacing:-0.01em">{{ p.title }}</h3>
+              <p style="font-size:13.5px;line-height:1.6;color:var(--sub);margin:0;flex:1">{{ p.desc }}</p>
+              <div style="display:flex;flex-wrap:wrap;gap:8px">
+                <sc-for list="{{ p.tags }}" as="t" hint-placeholder-count="2">
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sub);background:var(--chipbg);border:1px solid var(--border);padding:4px 9px;border-radius:8px">{{ t }}</span>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" data-screen-label="Timeline">
+      <h2 style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin:0 0 32px">Timeline</h2>
+      <div style="display:flex;flex-direction:column">
+        <sc-for list="{{ timeline }}" as="ev" hint-placeholder-count="5">
+          <div style="display:grid;grid-template-columns:150px 20px 1fr;gap:0 14px;padding-bottom:36px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);font-weight:600;padding-top:3px;text-align:right">{{ ev.year }}</div>
+            <div style="position:relative">
+              <div style="width:9px;height:9px;border-radius:50%;background:var(--accent);margin:5px auto 0"></div>
+              <div style="position:absolute;top:20px;bottom:-6px;left:50%;width:1px;background:var(--border)"></div>
+            </div>
+            <div>
+              <div style="font-size:15.5px;font-weight:700;margin-bottom:4px">{{ ev.title }}</div>
+              <div style="font-size:13.5px;color:var(--sub);line-height:1.55">{{ ev.detail }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- VAULT -->
+    <section id="vault" data-screen-label="Verification Vault" style="display:flex;justify-content:center">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:36px;box-shadow:var(--shadow);max-width:640px;width:100%">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          <h3 style="font-size:19px;font-weight:700;margin:0">Secure Recruiter Portal</h3>
+        </div>
+        <p style="font-size:13.5px;color:var(--sub);line-height:1.6;margin:0 0 20px">Enter the passkey from my application packet to access verified originals.</p>
+        <sc-if value="{{ vaultLocked }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <input value="{{ passkey }}" onChange="{{ onPasskey }}" onKeyDown="{{ onPassEnter }}" placeholder="Enter passkey" aria-label="Passkey" style="flex:1;min-width:180px;font-family:'JetBrains Mono',monospace;font-size:13.5px;padding:11px 14px;border-radius:14px;border:1px solid var(--border);background:var(--bg);color:var(--text);outline:none" style-focus="border-color:var(--accent)"></input>
+            <button onClick="{{ unlock }}" style="background:var(--accent);color:#fff;border:none;font-size:14px;font-weight:600;padding:11px 20px;border-radius:14px;cursor:pointer;font-family:'Inter',sans-serif" style-hover="filter:brightness(1.08)">Unlock</button>
+          </div>
+          <sc-if value="{{ vaultError }}" hint-placeholder-val="{{ false }}">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#DC2626;margin-top:12px">ERR_INVALID_PASSKEY — check your application packet</div>
+          </sc-if>
+        </sc-if>
+        <sc-if value="{{ vaultOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:10px;animation:dcpFadeUp .4s ease-out both">
+            <sc-for list="{{ docs }}" as="d" hint-placeholder-count="3">
+              <a href="{{ d.href }}" download="{{ d.file }}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border:1px solid var(--border);border-radius:14px;text-decoration:none;color:var(--text);background:var(--bg);transition:border-color .2s" style-hover="border-color:var(--accent)">
+                <span style="font-size:14px;font-weight:600">{{ d.name }}</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent)">{{ d.token }}</span>
+              </a>
+            </sc-for>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sub);margin-top:4px">session verified · tokens expire on page close</div>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <footer id="contact" data-screen-label="Contact" style="border-top:1px solid var(--border);padding-top:48px;display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start">
+      <div>
+        <div style="font-size:17px;font-weight:700;margin-bottom:6px">Saikrishna Bulusu</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--sub)">Sydney, AU · Pilani, IN</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <a href="mailto:f20230728@pilani.bits-pilani.ac.in" style="font-size:13.5px;font-weight:600;color:var(--text);text-decoration:none;border:1px solid var(--border);padding:9px 16px;border-radius:14px;background:var(--surface)" style-hover="border-color:var(--accent);color:var(--accent)">Email (BITS)</a>
+        <a href="mailto:Saikrishna.Bulusu@uts.edu.au" style="font-size:13.5px;font-weight:600;color:var(--text);text-decoration:none;border:1px solid var(--border);padding:9px 16px;border-radius:14px;background:var(--surface)" style-hover="border-color:var(--accent);color:var(--accent)">Email (UTS)</a>
+        <a href="https://github.com/Saikrishna-Bulusu" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:600;color:var(--text);text-decoration:none;border:1px solid var(--border);padding:9px 16px;border-radius:14px;background:var(--surface)" style-hover="border-color:var(--accent);color:var(--accent)">GitHub</a>
+        <a href="https://www.linkedin.com/in/saikrishna-bulusu/" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:600;color:var(--text);text-decoration:none;border:1px solid var(--border);padding:9px 16px;border-radius:14px;background:var(--surface)" style-hover="border-color:var(--accent);color:var(--accent)">LinkedIn</a>
+        <a href="https://orcid.org/0009-0009-0941-1328" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:600;color:var(--text);text-decoration:none;border:1px solid var(--border);padding:9px 16px;border-radius:14px;background:var(--surface)" style-hover="border-color:var(--accent);color:var(--accent)">ORCID</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLb }}" style="position:fixed;inset:0;z-index:100;background:rgba(10,10,11,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:48px;animation:dcpFadeUp .25s ease-out both;cursor:zoom-out">
+      <sc-if value="{{ lbIsImg }}" hint-placeholder-val="{{ true }}">
+        <img src="{{ lbSrc }}" alt="Expanded view" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.5)"></img>
+      </sc-if>
+      <sc-if value="{{ lbIsVideo }}" hint-placeholder-val="{{ false }}">
+        <video src="{{ lbSrc }}" controls="{{ true }}" autoPlay="{{ true }}" onClick="{{ stopProp }}" style="max-width:100%;max-height:100%;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.5)"></video>
+      </sc-if>
+      <button onClick="{{ closeLb }}" aria-label="Close" style="position:absolute;top:20px;right:24px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font-size:18px;cursor:pointer">✕</button>
+      <sc-if value="{{ lbHasMany }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ lbPrev }}" aria-label="Previous" style="position:absolute;left:20px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font-size:18px;cursor:pointer">‹</button>
+        <button onClick="{{ lbNext }}" aria-label="Next" style="position:absolute;right:20px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font-size:18px;cursor:pointer">›</button>
+        <div style="position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,.75)">{{ lbCounter }}</div>
+      </sc-if>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#1D4ED8&quot;,&quot;options&quot;:[&quot;#1D4ED8&quot;,&quot;#2563EB&quot;,&quot;#0F766E&quot;,&quot;#7C3AED&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;startDark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;cloudDensity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:500,&quot;min&quot;:100,&quot;max&quot;:1200,&quot;step&quot;:50,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero background&quot;}}">
+class Component extends DCLogic {
+  state = { dark: false, passkey: "", open: false, error: false, lbItems: null, lbIndex: 0 };
+
+  constructor(props) {
+    super(props);
+    this.state.dark = props.startDark ?? false;
+    this._yaw = 0; this._pitch = 0; this._tYaw = 0; this._tPitch = 0;
+  }
+
+  componentDidMount() {
+    this._raf = [];
+    this._startHero();
+    this._onKey = e => {
+      if (!this.state.lbItems) return;
+      if (e.key === "Escape") this.setState({ lbItems: null });
+      if (e.key === "ArrowRight") this._lbStep(1);
+      if (e.key === "ArrowLeft") this._lbStep(-1);
+    };
+    window.addEventListener("keydown", this._onKey);
+    this._onMove = e => {
+      this._tYaw = (e.clientX / window.innerWidth - 0.5) * 0.4;
+      this._tPitch = (e.clientY / window.innerHeight - 0.5) * 0.25;
+    };
+    window.addEventListener("mousemove", this._onMove);
+    this._onResize = () => { (this._raf || []).forEach(cancelAnimationFrame); this._startHero(); };
+    window.addEventListener("resize", this._onResize);
+  }
+  componentWillUnmount() {
+    (this._raf || []).forEach(cancelAnimationFrame);
+    window.removeEventListener("keydown", this._onKey);
+    window.removeEventListener("mousemove", this._onMove);
+    window.removeEventListener("resize", this._onResize);
+  }
+
+  _lbStep(d) {
+    this.setState(s => {
+      if (!s.lbItems) return null;
+      const n = s.lbItems.length;
+      return { lbIndex: (s.lbIndex + d + n) % n };
+    });
+  }
+
+  // Subtle research-environment background: LiDAR points, flight trajectory,
+  // CV feature crosses, wireframe box, NN graph — all at 4-9% opacity.
+  _startHero() {
+    const c = this._hero; if (!c) return;
+    c.width = window.innerWidth * devicePixelRatio; c.height = window.innerHeight * devicePixelRatio;
+    const ctx = c.getContext("2d");
+    const W = c.width, H = c.height, dpr = devicePixelRatio;
+
+    // LiDAR terrain points — three clusters spread across the viewport
+    const N = this.props.cloudDensity ?? 500, pts = [];
+    const clusters = [
+      { cx: 0.5, cy: 0.55, s: 1.0, w: 0.5 },
+      { cx: 0.12, cy: 0.85, s: 0.45, w: 0.25 },
+      { cx: 0.88, cy: 0.2, s: 0.4, w: 0.25 }
+    ];
+    for (let i = 0; i < N; i++) {
+      const cl = clusters[i < N * 0.5 ? 0 : (i < N * 0.75 ? 1 : 2)];
+      const x = Math.random() * 2 - 1, z = Math.random() * 2 - 1;
+      let y = 0.4 + Math.sin(x * 4) * 0.05 + Math.cos(z * 5) * 0.05 + (Math.random() - 0.5) * 0.03;
+      if (Math.random() < 0.14) y -= Math.random() * 0.5;
+      pts.push({ x, y, z, cl });
+    }
+    // CV feature points (screen-space, static jittered crosses)
+    const feats = [];
+    for (let i = 0; i < 26; i++) feats.push({ x: Math.random() * W, y: Math.random() * H, s: (3 + Math.random() * 3) * dpr });
+    // NN graph nodes (right side)
+    const layers = [3, 5, 5, 2], nn = [];
+    layers.forEach((n, li) => {
+      for (let i = 0; i < n; i++) nn.push({ l: li, x: W * (0.72 + li * 0.08), y: H * (0.18 + (i + 0.5) / n * 0.5) });
+    });
+    // wireframe box vertices
+    const box = [[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]];
+    const edges = [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+
+    let base = 0, t = 0;
+    const draw = () => {
+      this._yaw += (this._tYaw - this._yaw) * 0.05;
+      this._pitch += (this._tPitch - this._pitch) * 0.05;
+      ctx.clearRect(0, 0, W, H);
+      const dark = this.state.dark;
+      const ink = dark ? "148,170,255," : "29,78,216,";
+      const gray = dark ? "248,248,248," : "17,17,17,";
+
+      // 1. LiDAR point clusters
+      const yaw = base + this._yaw, pitch = 0.5 + this._pitch;
+      const cy1 = Math.cos(yaw), sy1 = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
+      const R = Math.min(W, H) * 0.9;
+      for (const p of pts) {
+        const x1 = p.x * cy1 - p.z * sy1, z1 = p.x * sy1 + p.z * cy1;
+        const y2 = p.y * cp - z1 * sp, z2 = p.y * sp + z1 * cp;
+        const persp = 1.9 / (1.9 + z2);
+        const sx = W * p.cl.cx + x1 * R * persp * 0.55 * p.cl.s, sy = H * p.cl.cy + y2 * R * persp * 0.55 * p.cl.s;
+        const a = Math.max(0.02, Math.min(0.09, 0.13 * persp - 0.05));
+        ctx.fillStyle = "rgba(" + ink + a.toFixed(3) + ")";
+        ctx.fillRect(sx, sy, Math.max(1, 1.3 * persp * dpr), Math.max(1, 1.3 * persp * dpr));
+      }
+
+      // 2. Drone flight trajectory (dashed bezier with moving dot)
+      ctx.strokeStyle = "rgba(" + ink + "0.07)";
+      ctx.lineWidth = 1.2 * dpr;
+      ctx.setLineDash([6 * dpr, 7 * dpr]);
+      ctx.beginPath();
+      ctx.moveTo(W * 0.02, H * 0.75);
+      ctx.bezierCurveTo(W * 0.25, H * 0.35, W * 0.45, H * 0.85, W * 0.7, H * 0.45);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      const tt = (t * 0.0012) % 1, mt = 1 - tt;
+      const bx = mt*mt*mt*W*0.02 + 3*mt*mt*tt*W*0.25 + 3*mt*tt*tt*W*0.45 + tt*tt*tt*W*0.7;
+      const by = mt*mt*mt*H*0.75 + 3*mt*mt*tt*H*0.35 + 3*mt*tt*tt*H*0.85 + tt*tt*tt*H*0.45;
+      ctx.fillStyle = "rgba(" + ink + "0.16)";
+      ctx.beginPath(); ctx.arc(bx, by, 2.4 * dpr, 0, Math.PI * 2); ctx.fill();
+
+      // 3. CV feature crosses
+      ctx.strokeStyle = "rgba(" + gray + "0.07)";
+      ctx.lineWidth = 1 * dpr;
+      for (const f of feats) {
+        ctx.beginPath();
+        ctx.moveTo(f.x - f.s, f.y); ctx.lineTo(f.x + f.s, f.y);
+        ctx.moveTo(f.x, f.y - f.s); ctx.lineTo(f.x, f.y + f.s);
+        ctx.stroke();
+      }
+
+      // 4. Robotics wireframe box (slow spin, left side)
+      const bcx = W * 0.16, bcy = H * 0.28, bs = Math.min(W, H) * 0.07;
+      const ba = t * 0.0016, c2 = Math.cos(ba), s2 = Math.sin(ba);
+      const proj = box.map(v => {
+        const x1 = v[0] * c2 - v[2] * s2, z1 = v[0] * s2 + v[2] * c2;
+        const y1 = v[1] * 0.86 - z1 * 0.5, z3 = v[1] * 0.5 + z1 * 0.86;
+        const pp = 3 / (3 + z3);
+        return [bcx + x1 * bs * pp, bcy + y1 * bs * pp];
+      });
+      ctx.strokeStyle = "rgba(" + gray + "0.08)";
+      for (const e of edges) {
+        ctx.beginPath(); ctx.moveTo(proj[e[0]][0], proj[e[0]][1]); ctx.lineTo(proj[e[1]][0], proj[e[1]][1]); ctx.stroke();
+      }
+
+      // 5. NN connections (right side)
+      ctx.strokeStyle = "rgba(" + ink + "0.05)";
+      for (const a1 of nn) for (const b1 of nn) {
+        if (b1.l === a1.l + 1) { ctx.beginPath(); ctx.moveTo(a1.x, a1.y); ctx.lineTo(b1.x, b1.y); ctx.stroke(); }
+      }
+      ctx.fillStyle = "rgba(" + ink + "0.11)";
+      for (const n1 of nn) { ctx.beginPath(); ctx.arc(n1.x, n1.y, 2 * dpr, 0, Math.PI * 2); ctx.fill(); }
+
+      base += 0.0008; t++;
+      this._raf[0] = requestAnimationFrame(draw);
+    };
+    draw();
+  }
+
+  _mkMedia(items) {
+    // items: [{src, type}] -> handlers to open lightbox
+    const open = i => () => this.setState({ lbItems: items, lbIndex: i });
+    const main = items[0];
+    return {
+      hasMedia: items.length > 0,
+      mainSrc: main ? main.src : "",
+      mainIsImg: main ? main.type === "img" : false,
+      mainIsVideo: main ? main.type === "video" : false,
+      mainOpen: open(0),
+      hasThumbs: items.length > 1,
+      thumbs: items.map((it, i) => ({ src: it.src, isImg: it.type === "img", isVideo: it.type === "video", open: open(i) }))
+    };
+  }
+
+  renderVals() {
+    const dark = this.state.dark;
+    const M = (arr) => this._mkMedia(arr);
+
+    const experience = [
+      Object.assign({
+        period: "JUN 2025 – PRESENT",
+        lab: "Intelligent Drone Lab, UTS",
+        role: "Undergraduate Thesis Scholar / Visiting Scholar",
+        supervisor: "A/Prof. Nabin Sharma",
+        desc: "Reinforcement-learning-based re-weighting of PX4 EKF2 estimator inputs, developed and validated in NVIDIA Isaac Sim. GeoAnchor visual localization platform presented at the UTS FEIT AI Showcase.",
+        tags: ["PX4 EKF2", "Reinforcement Learning", "NVIDIA Isaac Sim"],
+        download: false, quote: null
+      }, M([])),
+      Object.assign({
+        period: "JUN – JUL 2025",
+        lab: "CSIR-CEERI Pilani — Deep-Sea Micro-Systems",
+        role: "Research Intern",
+        supervisor: "Dr. S. Santosh Kumar",
+        desc: "FEM modeling of bulk-micromachined piezoresistive pressure sensors for deep-sea AUVs. Parametric simulation sweeps across 200–600 bar operating bounds in COMSOL Multiphysics and CoventorWare.",
+        tags: ["FEM", "COMSOL", "CoventorWare", "200–600 bar"],
+        download: true, downloadHref: "assets/FEM_DeepSea_Presentation.pptx", downloadLabel: "Download presentation (PPTX)",
+        quote: null
+      }, M([])),
+      Object.assign({
+        period: "FEB – MAY 2025",
+        lab: "CSIR-CEERI Pilani — Autonomous Flight Track",
+        role: "Research Intern",
+        supervisor: "Dr. Kaushal Kishore",
+        desc: "Structural builds of field-test development quadcopters. Visual depth feeds from Intel RealSense D435i and ZED 2i stereo arrays mounted onto a PX4-Avoidance processing stack.",
+        tags: ["RealSense D435i", "ZED 2i", "PX4-Avoidance"],
+        download: false, quote: null
+      }, M([{ src: "assets/CEERI_5_Drone.jpg", type: "img" }, { src: "assets/ZEDX_CEERI.jpg", type: "img" }])),
+      Object.assign({
+        period: "AUG 2024 – MAY 2025",
+        lab: "IoT Lab, BITS Pilani",
+        role: "Undergraduate Researcher",
+        supervisor: "Dr. Vinay Chamola",
+        desc: "End-to-end electrical routing, safety-margin calculations, and structural deployment of custom research airframes: multiple quadcopters and one octocopter configuration. Full avionics integration from power distribution to flight-controller bring-up.",
+        tags: ["quadcopter ×N", "octocopter", "avionics integration"],
+        download: false,
+        quote: "His comfort with hardware-software co-design and iterative testing reflects a level of maturity uncommon at the undergraduate stage.",
+        quoteBy: "Dr. Vinay Chamola — Associate Professor, EEE, BITS Pilani"
+      }, M([{ src: "assets/Quadcopter_IOTLAB.mp4", type: "video" }]))
+    ];
+
+    const hobbyDefs = [
+      { venue: "APOGEE 2026 · ROBOWARS", title: "8 kg Heavy Horizontal Spinner", pos: "center 25%",
+        items: [{ src: "assets/Tombstone.jpg", type: "img" }, { src: "assets/Tombstone_Designing.jpg", type: "img" }],
+        desc: "High-impact kinetic combat platform in the Tombstone architecture. Fusion 360 used to compute moment-of-inertia constants; shock-absorbent 3D-printed driver mounts and electrical isolation loops protect logic arrays from high-G collisions.",
+        tags: ["Fusion 360", "moment of inertia", "shock isolation"] },
+      { venue: "EMBEDDED PLATFORM", title: "Custom ESP32-S3 Microdrone", pos: "center",
+        items: [{ src: "assets/Microdrone.jpg", type: "img" }],
+        desc: "Miniature airframe on open-source custom firmware. Records noise-propagation metrics and characterizes sensor-drift variation across low-mass IMUs (BMI160 vs. classic MPU variants).",
+        tags: ["ESP32-S3", "BMI160", "noise profiling"] },
+      { venue: "PERSONAL PLATFORM", title: "FPV Racing & Freestyle Rig", pos: "center",
+        items: [{ src: "assets/My_FPV_Drone.jpg", type: "img" }],
+        desc: "High thrust-to-weight custom FPV platform for high-G dynamic response. Carbon-fiber frame, high-KV brushless motors, low-latency video transmission for racing and technical freestyle.",
+        tags: ["carbon fiber", "high-KV motors", "low-latency VTX"] }
+    ];
+    const hobby = hobbyDefs.map(h => Object.assign({
+      venue: h.venue, title: h.title, desc: h.desc, tags: h.tags,
+      mainStyle: { width: "100%", height: 210, objectFit: "cover", objectPosition: h.pos, cursor: "zoom-in", display: "block" }
+    }, this._mkMedia(h.items)));
+
+    const lb = this.state.lbItems;
+    const lbCur = lb ? lb[this.state.lbIndex] : null;
+
+    return {
+      rootClass: dark ? "dcp-dark" : "",
+      rootRef: el => { this._root = el; this._applyAccent(); },
+      toggleDark: () => this.setState(s => ({ dark: !s.dark })),
+      knobStyle: {
+        position: "absolute", top: 2, left: dark ? 18 : 2, width: 18, height: 18,
+        borderRadius: "50%", background: dark ? "#1D4ED8" : "#fff",
+        boxShadow: "0 1px 3px rgba(0,0,0,.25)", transition: "left .25s ease, background .25s ease", display: "block"
+      },
+      bgCanvas: el => { this._hero = el; },
+
+      experience,
+      hobby,
+      timeline: [
+        { year: "JUN 2025 – NOW", title: "Undergraduate Thesis Scholar — Intelligent Drone Lab, UTS", detail: "Supervisor: A/Prof. Nabin Sharma. PX4 EKF2 estimator re-weighting via reinforcement learning inside NVIDIA Isaac Sim." },
+        { year: "JUN – JUL 2025", title: "Research Intern — CSIR-CEERI Pilani", detail: "Supervisor: Dr. S. Santosh Kumar. Piezoresistive deep-sea pressure-sensor simulation." },
+        { year: "FEB – MAY 2025", title: "Research Intern — CSIR-CEERI Pilani", detail: "Supervisor: Dr. Kaushal Kishore. Vision-guided obstacle avoidance integration." },
+        { year: "JAN 2025", title: "3rd Place — ROBOFEST 4.0, Drone Swarm", detail: "OpenCV multi-agent formation synchronization. Prize: INR 7.5 Lakh (~11,500 AUD)." },
+        { year: "AUG 2024 – MAY 2025", title: "Undergraduate Researcher — IoT Lab, BITS Pilani", detail: "Supervisor: Dr. Vinay Chamola. UAV mechanical layouts and avionics integration." }
+      ],
+      docs: [
+        { name: "Official Academic Transcript", token: "PDF · verified", href: "vault/Academic_Transcript.pdf", file: "Saikrishna_Bulusu_Transcript.pdf" },
+        { name: "Letter of Recommendation", token: "PDF · verified", href: "vault/Recommendation_Letter.pdf", file: "Saikrishna_Bulusu_LOR.pdf" },
+        { name: "Robofest 4.0 Third-Place Certificate", token: "PDF · verified", href: "vault/Robofest_Certificate.pdf", file: "Robofest_4.0_Certificate.pdf" }
+      ],
+
+      passkey: this.state.passkey,
+      vaultLocked: !this.state.open,
+      vaultOpen: this.state.open,
+      vaultError: this.state.error,
+      onPasskey: e => this.setState({ passkey: e.target.value, error: false }),
+      onPassEnter: e => { if (e.key === "Enter") this._tryUnlock(); },
+      unlock: () => this._tryUnlock(),
+
+      lbOpen: !!lb,
+      lbSrc: lbCur ? lbCur.src : "",
+      lbIsImg: lbCur ? lbCur.type === "img" : false,
+      lbIsVideo: lbCur ? lbCur.type === "video" : false,
+      lbHasMany: lb ? lb.length > 1 : false,
+      lbCounter: lb ? (this.state.lbIndex + 1) + " / " + lb.length : "",
+      closeLb: () => this.setState({ lbItems: null }),
+      stopProp: e => e.stopPropagation(),
+      lbPrev: e => { e.stopPropagation(); this._lbStep(-1); },
+      lbNext: e => { e.stopPropagation(); this._lbStep(1); }
+    };
+  }
+
+  componentDidUpdate() { this._applyAccent(); }
+  _applyAccent() {
+    if (this._root && this.props.accentColor) this._root.style.setProperty("--accent", this.props.accentColor);
+  }
+
+  async _tryUnlock() {
+    // Passkey is never stored in plaintext — input is SHA-256 hashed and
+    // compared against a digest. Note: client-side gating deters casual
+    // access only; truly private files need server-side auth.
+    const buf = new TextEncoder().encode(this.state.passkey.trim());
+    const h = await crypto.subtle.digest("SHA-256", buf);
+    const hex = [...new Uint8Array(h)].map(x => x.toString(16).padStart(2, "0")).join("");
+    if (hex === "1abf98ed843bd8a685d7c20ea6761b3646e438b5fb4f72fd75129648a957aacd") this.setState({ open: true, error: false });
+    else this.setState({ error: true });
+  }
+}
+</script>
+</body>
+</html>

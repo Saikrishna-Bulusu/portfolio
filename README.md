@@ -5,7 +5,7 @@ Static research portfolio built with the Claude Design (Design Composer) runtime
 - `index.html` — the page (Design Composer template + logic)
 - `support.js` — the DC client runtime (loads React/ReactDOM, renders the template)
 - `assets/` — images, video, and presentation referenced by the page
-- `vault/` — recruiter-portal documents (client-side passkey gate)
+- Verified documents (transcript, LOR, certificate) are shared on request, not hosted here
 
 ## Local preview
 Serve over HTTP (not `file://`, the runtime uses `fetch(location.href)`):

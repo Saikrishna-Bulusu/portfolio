@@ -4,12 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Saikrishna Bulusu — Research Portfolio</title>
+<meta name="description" content="Saikrishna Bulusu, ECE at BITS Pilani and Visiting Scholar at UTS. Drone systems from avionics and flight-controller bring-up to visual localization for GPS-denied flight.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Saikrishna Bulusu — Research Portfolio">
+<meta property="og:description" content="Drone systems from avionics and flight-controller bring-up to visual localization for GPS-denied flight.">
+<meta property="og:url" content="https://saikrishna-bulusu.github.io/portfolio/">
+<meta property="og:image" content="https://saikrishna-bulusu.github.io/portfolio/assets/Saikrishna_Bulusu.jpg">
+<meta name="twitter:card" content="summary">
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -17,6 +23,17 @@ html{scroll-behavior:smooth}
 body{margin:0;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 .dcp-dark{--bg:#0F0F10!important;--surface:#18181B!important;--text:#F8F8F8!important;--sub:#A1A1AA!important;--border:#26262B!important;--navbg:rgba(15,15,16,0.72)!important;--chipbg:#212125!important;--glass:rgba(24,24,27,0.4)!important;--shadow:0 1px 2px rgba(0,0,0,.4)!important;--shadowlift:0 12px 32px rgba(0,0,0,.5)!important}
 @keyframes dcpFadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes dcpRise{from{opacity:0;transform:translateY(28px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes dcpDot{0%{box-shadow:0 0 0 0 rgba(29,78,216,.45)}100%{box-shadow:0 0 0 10px rgba(29,78,216,0)}}
+@keyframes dcpGrow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.dcp-in{animation:dcpFadeUp .6s cubic-bezier(.2,.7,.2,1) both}
+.dcp-d1{animation-delay:.08s}.dcp-d2{animation-delay:.18s}.dcp-d3{animation-delay:.28s}.dcp-d4{animation-delay:.4s}
+.dcp-dot{animation:dcpDot 2s ease-out infinite}
+/* Scroll reveals. Browsers without scroll-driven animations skip this and show everything at rest. */
+@supports (animation-timeline: view()){
+  section[id] > h2,section[id] > p,#current > div > div,#experience > div > div,#hobby > div > div,#timeline > div > div,#vault > div{animation:dcpRise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+  #timeline > div > div > div:nth-child(2) > div:last-child{transform-origin:top;animation:dcpGrow linear both;animation-timeline:view();animation-range:entry 20% cover 45%}
+}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
 </helmet>
@@ -25,12 +42,12 @@ body{margin:0;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:an
   <canvas ref="{{ bgCanvas }}" style="position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:0"></canvas>
 
   <!-- NAV -->
-  <nav style="position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;display:flex;align-items:center;gap:4px;padding:8px 10px;border-radius:16px;border:1px solid var(--border);background:var(--navbg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:var(--shadow);max-width:calc(100vw - 32px);flex-wrap:wrap;justify-content:center">
+  <nav style="position:fixed;top:16px;left:50%;transform:translateX(-50%);width:max-content;z-index:50;display:flex;align-items:center;gap:4px;padding:8px 10px;border-radius:16px;border:1px solid var(--border);background:var(--navbg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:var(--shadow);max-width:calc(100vw - 32px);flex-wrap:wrap;justify-content:center">
     <a href="#home" style="font-size:13px;font-weight:500;color:var(--text);text-decoration:none;padding:7px 12px;border-radius:10px" style-hover="background:var(--chipbg)">Home</a>
     <a href="#current" style="font-size:13px;font-weight:500;color:var(--sub);text-decoration:none;padding:7px 12px;border-radius:10px" style-hover="background:var(--chipbg);color:var(--text)">Current Research</a>
     <a href="#experience" style="font-size:13px;font-weight:500;color:var(--sub);text-decoration:none;padding:7px 12px;border-radius:10px" style-hover="background:var(--chipbg);color:var(--text)">Experience</a>
     <a href="#hobby" style="font-size:13px;font-weight:500;color:var(--sub);text-decoration:none;padding:7px 12px;border-radius:10px" style-hover="background:var(--chipbg);color:var(--text)">Hobby Projects</a>
-    <a href="#vault" style="font-size:13px;font-weight:500;color:var(--sub);text-decoration:none;padding:7px 12px;border-radius:10px" style-hover="background:var(--chipbg);color:var(--text)">Vault</a>
+    <a href="#vault" style="font-size:13px;font-weight:500;color:var(--sub);text-decoration:none;padding:7px 12px;border-radius:10px" style-hover="background:var(--chipbg);color:var(--text)">Documents</a>
     <a href="#contact" style="font-size:13px;font-weight:500;color:var(--sub);text-decoration:none;padding:7px 12px;border-radius:10px" style-hover="background:var(--chipbg);color:var(--text)">Contact</a>
     <button onClick="{{ toggleDark }}" aria-label="Toggle dark mode" style="margin-left:6px;width:40px;height:24px;border-radius:12px;border:1px solid var(--border);background:var(--chipbg);cursor:pointer;position:relative;padding:0">
       <span style="{{ knobStyle }}"></span>
@@ -40,17 +57,17 @@ body{margin:0;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:an
   <!-- HERO -->
   <header id="home" data-screen-label="Hero" style="position:relative;overflow:hidden;padding:150px 24px 90px">
     <div style="position:relative;max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:center">
-      <div style="animation:dcpFadeUp .5s ease-out both">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--accent);margin-bottom:18px;letter-spacing:.02em">VISITING SCHOLAR · INTELLIGENT DRONE LAB @ UTS · ECE, BITS PILANI</div>
-        <h1 style="font-size:clamp(38px,5vw,58px);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin:0 0 20px">Saikrishna Bulusu</h1>
-        <p style="font-size:19px;line-height:1.55;color:var(--sub);margin:0 0 34px;max-width:46ch;text-wrap:pretty">State estimation optimization pipelines for GPS-denied autonomous aerial environments.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <div>
+        <div class="dcp-in" style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--accent);margin-bottom:18px;letter-spacing:.02em">VISITING SCHOLAR · INTELLIGENT DRONE LAB @ UTS · ECE, BITS PILANI</div>
+        <h1 class="dcp-in dcp-d1" style="font-size:clamp(38px,5vw,58px);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin:0 0 20px">Saikrishna Bulusu</h1>
+        <p class="dcp-in dcp-d2" style="font-size:19px;line-height:1.55;color:var(--sub);margin:0 0 34px;max-width:46ch;text-wrap:pretty">I build drones end to end, from wiring and flight-controller bring-up to visual localization for flight without GPS.</p>
+        <div class="dcp-in dcp-d3" style="display:flex;flex-wrap:wrap;gap:12px">
           <a href="#current" style="background:var(--accent);color:#fff;font-size:14.5px;font-weight:600;padding:12px 22px;border-radius:14px;text-decoration:none;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-2px);box-shadow:0 8px 20px rgba(29,78,216,.3)">Explore Research</a>
-          <a href="#experience" style="background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--text);border:1px solid var(--border);font-size:14.5px;font-weight:600;padding:12px 22px;border-radius:14px;text-decoration:none;transition:transform .2s" style-hover="transform:translateY(-2px)">Curriculum Vitae</a>
-          <a href="#vault" style="background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--text);border:1px solid var(--border);font-size:14.5px;font-weight:600;padding:12px 22px;border-radius:14px;text-decoration:none;transition:transform .2s" style-hover="transform:translateY(-2px)">Secure Vault</a>
+          <a href="https://www.linkedin.com/in/saikrishna-bulusu/" target="_blank" rel="noopener" style="background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--text);border:1px solid var(--border);font-size:14.5px;font-weight:600;padding:12px 22px;border-radius:14px;text-decoration:none;transition:transform .2s" style-hover="transform:translateY(-2px)">Curriculum Vitae ↗</a>
+          <a href="#contact" style="background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--text);border:1px solid var(--border);font-size:14.5px;font-weight:600;padding:12px 22px;border-radius:14px;text-decoration:none;transition:transform .2s" style-hover="transform:translateY(-2px)">Get in touch</a>
         </div>
       </div>
-      <div style="display:flex;justify-content:center">
+      <div class="dcp-in dcp-d4" style="display:flex;justify-content:center">
         <img src="assets/Saikrishna_Bulusu.jpg" alt="Saikrishna Bulusu" style="width:min(340px,100%);aspect-ratio:4/5;object-fit:cover;border-radius:18px;border:1px solid var(--border);box-shadow:var(--shadowlift);filter:grayscale(1);transition:filter .5s ease,transform .3s ease" style-hover="filter:grayscale(0);transform:translateY(-4px)"></img>
       </div>
     </div>
@@ -72,7 +89,7 @@ body{margin:0;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:an
           <div style="padding:26px;display:flex;flex-direction:column;gap:12px;flex:1">
             <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent)">UTS FEIT AI SHOWCASE</div>
             <h3 style="font-size:18px;font-weight:700;margin:0">GeoAnchor Platform</h3>
-            <p style="font-size:13.5px;line-height:1.6;color:var(--sub);margin:0;flex:1">Vision-aided tracking framework mitigating cumulative state-estimation drift when GPS is jammed or unavailable. Downward-facing optical odometry compared against localized geometric spatial tiles, with real-time confidence re-weighting of sensor inputs.</p>
+            <p style="font-size:13.5px;line-height:1.6;color:var(--sub);margin:0;flex:1">Absolute visual localization for drones when GPS is jammed or unavailable. A downward camera frame is matched against georeferenced map tiles, and the position fix, with its covariance, goes to the flight controller's EKF over MAVLink.</p>
             <div style="display:flex;flex-wrap:wrap;gap:8px">
               <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sub);background:var(--chipbg);border:1px solid var(--border);padding:4px 9px;border-radius:8px">optical odometry</span>
               <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sub);background:var(--chipbg);border:1px solid var(--border);padding:4px 9px;border-radius:8px">map tiles</span>
@@ -192,7 +209,7 @@ body{margin:0;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:an
           <div style="display:grid;grid-template-columns:150px 20px 1fr;gap:0 14px;padding-bottom:36px">
             <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);font-weight:600;padding-top:3px;text-align:right">{{ ev.year }}</div>
             <div style="position:relative">
-              <div style="width:9px;height:9px;border-radius:50%;background:var(--accent);margin:5px auto 0"></div>
+              <div class="dcp-dot" style="width:9px;height:9px;border-radius:50%;background:var(--accent);margin:5px auto 0"></div>
               <div style="position:absolute;top:20px;bottom:-6px;left:50%;width:1px;background:var(--border)"></div>
             </div>
             <div>
@@ -208,30 +225,11 @@ body{margin:0;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:an
     <section id="vault" data-screen-label="Verification Vault" style="display:flex;justify-content:center">
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:36px;box-shadow:var(--shadow);max-width:640px;width:100%">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-          <h3 style="font-size:19px;font-weight:700;margin:0">Secure Recruiter Portal</h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          <h3 style="font-size:19px;font-weight:700;margin:0">Verified Documents</h3>
         </div>
-        <p style="font-size:13.5px;color:var(--sub);line-height:1.6;margin:0 0 20px">Enter the passkey from my application packet to access verified originals.</p>
-        <sc-if value="{{ vaultLocked }}" hint-placeholder-val="{{ true }}">
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <input value="{{ passkey }}" onChange="{{ onPasskey }}" onKeyDown="{{ onPassEnter }}" placeholder="Enter passkey" aria-label="Passkey" style="flex:1;min-width:180px;font-family:'JetBrains Mono',monospace;font-size:13.5px;padding:11px 14px;border-radius:14px;border:1px solid var(--border);background:var(--bg);color:var(--text);outline:none" style-focus="border-color:var(--accent)"></input>
-            <button onClick="{{ unlock }}" style="background:var(--accent);color:#fff;border:none;font-size:14px;font-weight:600;padding:11px 20px;border-radius:14px;cursor:pointer;font-family:'Inter',sans-serif" style-hover="filter:brightness(1.08)">Unlock</button>
-          </div>
-          <sc-if value="{{ vaultError }}" hint-placeholder-val="{{ false }}">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#DC2626;margin-top:12px">ERR_INVALID_PASSKEY — check your application packet</div>
-          </sc-if>
-        </sc-if>
-        <sc-if value="{{ vaultOpen }}" hint-placeholder-val="{{ false }}">
-          <div style="display:flex;flex-direction:column;gap:10px;animation:dcpFadeUp .4s ease-out both">
-            <sc-for list="{{ docs }}" as="d" hint-placeholder-count="3">
-              <a href="{{ d.href }}" download="{{ d.file }}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border:1px solid var(--border);border-radius:14px;text-decoration:none;color:var(--text);background:var(--bg);transition:border-color .2s" style-hover="border-color:var(--accent)">
-                <span style="font-size:14px;font-weight:600">{{ d.name }}</span>
-                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent)">{{ d.token }}</span>
-              </a>
-            </sc-for>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sub);margin-top:4px">session verified · tokens expire on page close</div>
-          </div>
-        </sc-if>
+        <p style="font-size:13.5px;color:var(--sub);line-height:1.6;margin:0 0 20px">My official transcript, letter of recommendation and ROBOFEST 4.0 certificate are available to recruiters on request.</p>
+        <a href="mailto:f20230728@pilani.bits-pilani.ac.in?subject=Document%20request" style="display:inline-flex;background:var(--accent);color:#fff;font-size:14px;font-weight:600;padding:11px 20px;border-radius:14px;text-decoration:none" style-hover="filter:brightness(1.08)">Request documents</a>
       </div>
     </section>
 
@@ -272,7 +270,7 @@ body{margin:0;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:an
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#1D4ED8&quot;,&quot;options&quot;:[&quot;#1D4ED8&quot;,&quot;#2563EB&quot;,&quot;#0F766E&quot;,&quot;#7C3AED&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;startDark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;cloudDensity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:500,&quot;min&quot;:100,&quot;max&quot;:1200,&quot;step&quot;:50,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero background&quot;}}">
 class Component extends DCLogic {
-  state = { dark: false, passkey: "", open: false, error: false, lbItems: null, lbIndex: 0 };
+  state = { dark: false, lbItems: null, lbIndex: 0 };
 
   constructor(props) {
     super(props);
@@ -467,7 +465,7 @@ class Component extends DCLogic {
         lab: "CSIR-CEERI Pilani — Autonomous Flight Track",
         role: "Research Intern",
         supervisor: "Dr. Kaushal Kishore",
-        desc: "Structural builds of field-test development quadcopters. Visual depth feeds from Intel RealSense D435i and ZED 2i stereo arrays mounted onto a PX4-Avoidance processing stack.",
+        desc: "Built quadcopters for field tests and integrated Intel RealSense D435i and ZED 2i depth cameras with the PX4-Avoidance stack for vision-guided obstacle avoidance.",
         tags: ["RealSense D435i", "ZED 2i", "PX4-Avoidance"],
         download: false, quote: null
       }, M([{ src: "assets/CEERI_5_Drone.jpg", type: "img" }, { src: "assets/ZEDX_CEERI.jpg", type: "img" }])),
@@ -476,7 +474,7 @@ class Component extends DCLogic {
         lab: "IoT Lab, BITS Pilani",
         role: "Undergraduate Researcher",
         supervisor: "Dr. Vinay Chamola",
-        desc: "End-to-end electrical routing, safety-margin calculations, and structural deployment of custom research airframes: multiple quadcopters and one octocopter configuration. Full avionics integration from power distribution to flight-controller bring-up.",
+        desc: "Wired and assembled custom research drones, several quadcopters and one octocopter. Handled power distribution, current safety-margin calculations and flight-controller bring-up.",
         tags: ["quadcopter ×N", "octocopter", "avionics integration"],
         download: false,
         quote: "His comfort with hardware-software co-design and iterative testing reflects a level of maturity uncommon at the undergraduate stage.",
@@ -485,17 +483,17 @@ class Component extends DCLogic {
     ];
 
     const hobbyDefs = [
-      { venue: "APOGEE 2026 · ROBOWARS", title: "8 kg Heavy Horizontal Spinner", pos: "center 25%",
-        items: [{ src: "assets/Tombstone.jpg", type: "img" }, { src: "assets/Tombstone_Designing.jpg", type: "img" }],
-        desc: "High-impact kinetic combat platform in the Tombstone architecture. Fusion 360 used to compute moment-of-inertia constants; shock-absorbent 3D-printed driver mounts and electrical isolation loops protect logic arrays from high-G collisions.",
-        tags: ["Fusion 360", "moment of inertia", "shock isolation"] },
       { venue: "EMBEDDED PLATFORM", title: "Custom ESP32-S3 Microdrone", pos: "center",
         items: [{ src: "assets/Microdrone.jpg", type: "img" }],
-        desc: "Miniature airframe on open-source custom firmware. Records noise-propagation metrics and characterizes sensor-drift variation across low-mass IMUs (BMI160 vs. classic MPU variants).",
+        desc: "Miniature quadcopter running open-source firmware on an ESP32-S3. I use it to measure sensor noise and compare drift between low-cost IMUs (BMI160 vs. MPU-series).",
         tags: ["ESP32-S3", "BMI160", "noise profiling"] },
+      { venue: "APOGEE 2026 · ROBOWARS", title: "8 kg Heavy Horizontal Spinner", pos: "center 25%",
+        items: [{ src: "assets/Tombstone.jpg", type: "img" }, { src: "assets/Tombstone_Designing.jpg", type: "img" }],
+        desc: "8 kg combat robot with a horizontal spinning weapon. Designed in Fusion 360, which I also used to calculate the weapon's moment of inertia. 3D-printed shock-absorbing mounts protect the motor drivers and electronics from impacts.",
+        tags: ["Fusion 360", "moment of inertia", "shock isolation"] },
       { venue: "PERSONAL PLATFORM", title: "FPV Racing & Freestyle Rig", pos: "center",
         items: [{ src: "assets/My_FPV_Drone.jpg", type: "img" }],
-        desc: "High thrust-to-weight custom FPV platform for high-G dynamic response. Carbon-fiber frame, high-KV brushless motors, low-latency video transmission for racing and technical freestyle.",
+        desc: "Custom FPV quad with a high thrust-to-weight ratio for racing and freestyle. Carbon-fiber frame, high-KV brushless motors and a low-latency video link.",
         tags: ["carbon fiber", "high-KV motors", "low-latency VTX"] }
     ];
     const hobby = hobbyDefs.map(h => Object.assign({
@@ -526,20 +524,6 @@ class Component extends DCLogic {
         { year: "JAN 2025", title: "3rd Place — ROBOFEST 4.0, Drone Swarm", detail: "OpenCV multi-agent formation synchronization. Prize: INR 7.5 Lakh (~11,500 AUD)." },
         { year: "AUG 2024 – MAY 2025", title: "Undergraduate Researcher — IoT Lab, BITS Pilani", detail: "Supervisor: Dr. Vinay Chamola. UAV mechanical layouts and avionics integration." }
       ],
-      docs: [
-        { name: "Official Academic Transcript", token: "PDF · verified", href: "vault/Academic_Transcript.pdf", file: "Saikrishna_Bulusu_Transcript.pdf" },
-        { name: "Letter of Recommendation", token: "PDF · verified", href: "vault/Recommendation_Letter.pdf", file: "Saikrishna_Bulusu_LOR.pdf" },
-        { name: "Robofest 4.0 Third-Place Certificate", token: "PDF · verified", href: "vault/Robofest_Certificate.pdf", file: "Robofest_4.0_Certificate.pdf" }
-      ],
-
-      passkey: this.state.passkey,
-      vaultLocked: !this.state.open,
-      vaultOpen: this.state.open,
-      vaultError: this.state.error,
-      onPasskey: e => this.setState({ passkey: e.target.value, error: false }),
-      onPassEnter: e => { if (e.key === "Enter") this._tryUnlock(); },
-      unlock: () => this._tryUnlock(),
-
       lbOpen: !!lb,
       lbSrc: lbCur ? lbCur.src : "",
       lbIsImg: lbCur ? lbCur.type === "img" : false,
@@ -556,17 +540,6 @@ class Component extends DCLogic {
   componentDidUpdate() { this._applyAccent(); }
   _applyAccent() {
     if (this._root && this.props.accentColor) this._root.style.setProperty("--accent", this.props.accentColor);
-  }
-
-  async _tryUnlock() {
-    // Passkey is never stored in plaintext — input is SHA-256 hashed and
-    // compared against a digest. Note: client-side gating deters casual
-    // access only; truly private files need server-side auth.
-    const buf = new TextEncoder().encode(this.state.passkey.trim());
-    const h = await crypto.subtle.digest("SHA-256", buf);
-    const hex = [...new Uint8Array(h)].map(x => x.toString(16).padStart(2, "0")).join("");
-    if (hex === "1abf98ed843bd8a685d7c20ea6761b3646e438b5fb4f72fd75129648a957aacd") this.setState({ open: true, error: false });
-    else this.setState({ error: true });
   }
 }
 </script>
